@@ -38,3 +38,18 @@ nest new myfirstapp
 ? What name would you like to use for the middleware? users/logger
 CREATE src/users/logger/logger.middleware.ts (206 bytes)
 CREATE src/users/logger/logger.middleware.spec.ts (195 bytes)
+
+❯❯ myfirstapp git:(master) 16:01 nest g resource payments
+? What transport layer do you use? REST API
+? Would you like to generate CRUD entry points? Yes
+CREATE src/payments/payments.controller.ts (991 bytes)
+CREATE src/payments/payments.controller.spec.ts (616 bytes)
+CREATE src/payments/payments.module.ts (278 bytes)
+CREATE src/payments/payments.service.ts (677 bytes)
+CREATE src/payments/payments.service.spec.ts (492 bytes)
+CREATE src/payments/dto/create-payment.dto.ts (34 bytes)
+CREATE src/payments/dto/update-payment.dto.ts (185 bytes)
+CREATE src/payments/entities/payment.entity.ts (25 bytes)
+UPDATE package.json (2120 bytes)
+UPDATE src/app.module.ts (576 bytes)
+✔ Packages installed successfully.

@@ -12,6 +12,7 @@ import {
 import { TasksService } from './tasks.service';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { updateTaskDto } from './dto/update-task.dto';
+import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 
 @Controller('tasks')
 export class TasksController {
@@ -20,6 +21,9 @@ export class TasksController {
 
   // ? @Get() es un decorator que indica que la función getAllTasks es una función de Get
   @Get()
+  @ApiOperation({ summary: 'Get all tasks' })
+  @ApiResponse({ status: 200, description: 'Successfully get all tasks' })
+  @ApiResponse({ status: 403, description: 'Forbidden' })
   getAllTasks(@Query() query: any) {
     // * @Query es un decorador que recibe un parámetro query
     console.log(query);
@@ -33,6 +37,7 @@ export class TasksController {
   }
 
   @Post()
+  @ApiOperation({ summary: 'Create a new task' })
   createTask(@Body() task: CreateTaskDto) {
     // * @Body es un decorador que indica que el parámetro task recibe un objeto JSON
     return this.tasksService.createTask(task);
