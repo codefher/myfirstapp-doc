@@ -23,6 +23,11 @@ async function bootstrap() {
   const documentFactory = () => SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, documentFactory);
 
+  // * enableCors permite que las solicitudes CORS (Cross-Origin Resource Sharing) se realicen desde cualquier origen.
+  app.enableCors({
+    // origin: 'https://faztweb.com',
+  });
+
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();
